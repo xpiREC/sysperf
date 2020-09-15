@@ -45,22 +45,22 @@ fi
 # Check if the required packages are installed
 if  [ ! -e '/usr/bin/wget' ]; then
     echo "Error: wget command not found. You must install wget command at first."
-    apt install wget
+    apt install wget -y
     echo "Info: wget install."
 fi
 if  [ ! -e '/usr/bin/fio' ]; then
     echo "Error: fio command not found. You must install fio command at first."
-    apt install fio
+    apt install fio -y
     echo "Info: fio install."
 fi
 if  [ ! -e '/usr/bin/curl' ]; then
     echo "Error: curl command not found. You must install curl command at first."
-    apt install curl
+    apt install curl -y
     echo "Info: curl install."
 fi
 if  [ ! -e '/usr/bin/jq' ]; then
     echo "Error: jq command not found. You must install jq command at first."
-    apt install jq
+    apt install jq -y
     echo "Info: jq install."
 fi
 
