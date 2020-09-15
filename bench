@@ -24,7 +24,7 @@ else
 	echo "Looks like you aren't running this installer on Debian or Ubuntu"
 	exit
 fi
-if [[ "$os" == "ubuntu" && "$os_version" -lt 1904 ]]; then
+if [[ "$os" == "ubuntu" && "$os_version" -lt 1804 ]]; then
 	echo "Ubuntu 18.04 or higher is required to use this installer
 This version of Ubuntu is too old and unsupported"
 	exit
@@ -45,18 +45,26 @@ fi
 # Check if the required packages are installed
 if  [ ! -e '/usr/bin/wget' ]; then
     echo "Error: wget command not found. You must install wget command at first."
+    apt install wget
+    echo "Info: wget install."
     exit 1
 fi
 if  [ ! -e '/usr/bin/fio' ]; then
     echo "Error: fio command not found. You must install fio command at first."
+    apt install fio
+    echo "Info: fio install."
     exit 1
 fi
 if  [ ! -e '/usr/bin/curl' ]; then
     echo "Error: curl command not found. You must install curl command at first."
+    apt install curl
+    echo "Info: curl install."
     exit 1
 fi
 if  [ ! -e '/usr/bin/jq' ]; then
     echo "Error: jq command not found. You must install jq command at first."
+    apt install jq
+    echo "Info: jq install."
     exit 1
 fi
 
@@ -125,6 +133,7 @@ speed_result() {
     speed_test 'http://speedtest.fremont.linode.com/100MB-newark.bin' 'Fremont, Linode'
     speed_test 'https://tx-us-ping.vultr.com/vultr.com.100MB.bin' 'Texas, Vultr'
     speed_test 'http://speedtest.singapore.linode.com/100MB-singapore.bin' 'Singapore, Linode'
+    speed_test 'http://gra.proof.ovh.net/files/100Mb.dat' 'Gravelines, OVH'
 }
 
 ping_test() {
@@ -140,6 +149,7 @@ ping_result() {
   ping_test 'speedtest.fremont.linode.com' 'San Francisco'
   ping_test 'speedtest.singapore.linode.com' 'Singapore'
   ping_test 'speedtest.tokyo2.linode.com' 'Tokyo'
+  ping_test 'gra.proof.ovh.net' 'Gravelines'
 }
 
 io_test() {
