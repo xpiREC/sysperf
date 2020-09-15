@@ -47,25 +47,21 @@ if  [ ! -e '/usr/bin/wget' ]; then
     echo "Error: wget command not found. You must install wget command at first."
     apt install wget
     echo "Info: wget install."
-    exit 1
 fi
 if  [ ! -e '/usr/bin/fio' ]; then
     echo "Error: fio command not found. You must install fio command at first."
     apt install fio
     echo "Info: fio install."
-    exit 1
 fi
 if  [ ! -e '/usr/bin/curl' ]; then
     echo "Error: curl command not found. You must install curl command at first."
     apt install curl
     echo "Info: curl install."
-    exit 1
 fi
 if  [ ! -e '/usr/bin/jq' ]; then
     echo "Error: jq command not found. You must install jq command at first."
     apt install jq
     echo "Info: jq install."
-    exit 1
 fi
 
 # Test IPv6 connectivity
